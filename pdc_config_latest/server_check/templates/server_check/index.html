@@ -1,0 +1,60 @@
+{% extends "server_check/base.html" %}
+{% block content %}
+This is server check page status of the server can be monitored from here
+{% endblock %}
+{% block desc %}
+this section will contain desc or any other things
+{% endblock %}
+{% block href %}
+<p><a href="pdc_configuration">PDC Configuran</a></p>
+{% endblock %}
+{% block server_info %}
+<p> this block will contain all the server information</p>
+<table style="width:100%">
+<tr>
+ <th>SERVERNAME</th>
+ <th>CM</th>
+ <th>DM ORACLE</th>
+ <th>FORMATER</th>
+ <th>EAI_JS</th>
+ <th>bre</th>
+ <th>rre</th>
+ <th> sync pdc </th>
+</tr>
+<!--   <p> SERVERNAME  &emsp;&emsp;&emsp; CM  &emsp;&emsp;&emsp; DM ORACLE  &emsp;&emsp;&emsp; FORMATER &emsp;&emsp;&emsp; EAI_JS  </p>-->
+{% for s in server %}
+ <tr>
+   {% if s.status == "err" %}
+   <td><font color="Red"> {{ s.servername }}</font></td>
+ {% else %}
+ <td> {{ s.servername }}</td>
+ {% endif %}
+
+
+
+  <td>{{ s.cm }}</td>
+
+
+
+  <td>{{  s.dm_oracle  }}</td>
+
+
+
+ <td>{{ s.java_formater  }}</td>
+
+ <!--  <td>{{ s.java_formater }}</td>-->
+
+
+  <td>{{ s.java_Deai_js }}</td>
+
+  <td>{{ s.bre }}</td>
+ <td>{{ s.rre }}</td>
+ <td>{{ s.syc_pdc }}</td>
+ </tr>
+<!--    <p> {{ s.servername }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{ s.cm }} &emsp;&emsp;&emsp;&emsp;&emsp; {{ s.dm_oracle }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{ s.java_formater }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{ s.java_Deai_js }} </p>-->
+
+{% endfor %}
+
+</table>
+
+   {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "pdc_configurations/base.html" %}
+{% block content %}
+This is pdc_congiguration page., site is under construction
+<form method="post" enctype="multipart/form-data" action="{% url 'validate' %}">
+
+    {% csrf_token %}
+    
+    <p> Host Name <font  style="text-align: center">{{ form.host_name }} </font></p>
+    <p> Username <font  class="center"> {{ form.usrname }} </font></p>
+    <p> passwod <font  class="center"> {{ form.passwd }} </font></p>
+    <p> Source Path <font  class="center"> {{ form.source }} </font></p>
+    <p> Destination path <font  class="center">{{ form.destination }}</font> </p>
+   <!--   {{ form.host_name }}--> 
+    <!-- {{ form.usrname }} -->
+    <!--{{ form.passwd }} -->
+    <!--{{ form.source }} -->
+    <!--{{ form.destination }} -->
+    
+     
+     <button type="submit">Submit</button> 
+    
+  </form>
+
+ 
+
+ 
+{% endblock %}

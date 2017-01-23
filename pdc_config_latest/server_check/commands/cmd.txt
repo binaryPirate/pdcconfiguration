@@ -1,0 +1,2 @@
+cd /opt/brm/brm/portal/7.5/sys/test
+pin_virtual_time

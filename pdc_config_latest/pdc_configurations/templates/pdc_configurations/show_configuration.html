@@ -1,0 +1,14 @@
+{% extends "pdc_configurations/base.html" %}
+{% block content %}
+Click on configuration name below to generate xml.
+
+{% for s in config %}
+
+ {% if s.status == "done" %}
+  <li><a href="{% url 'call_jarvis' s.id %}" >{{ s.config }}</a> &emsp;&emsp;&emsp;<font color="green" class="left"> {{ s.status }} </font></li>
+ {% else %}
+ 	<li><a href="{% url 'call_jarvis' s.id %}" >{{ s.config }}</a> &emsp;&emsp;&emsp;<font color="red" class="left"> {{ s.status }} </font></li>
+ {% endif %}
+{% endfor %}
+
+{% endblock %}

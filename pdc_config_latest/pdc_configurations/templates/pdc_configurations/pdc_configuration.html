@@ -1,0 +1,14 @@
+{% extends "pdc_configurations/base.html" %}
+{% block content %}
+This is pdc_congiguration page., site is under construction
+{% endblock %}
+{% block desc %}
+this section will contain pdc_configuration things and many more
+{% endblock %}
+{% block href %}
+<p class="inactive" >PDC Configuration</p>
+{% endblock %}
+{% block options %}
+<!--  <a class="button" href="#">Enter enviornment</a>-->
+<a class="button" href="{% url 'server_cred' %}">Start</a>
+{% endblock %}

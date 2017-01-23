@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><pdc:PricingObjectsJXB xmlns:pdc="http://xmlns.oracle.com/communications/platform/model/pricing"><chargeRateplanSelector xmlns:pdc="http://xmlns.oracle.com/communications/platform/model/pricing">
+    <name>Demo_charge_selector_123_now_1</name>
+    <description>Chargeselector for testing purpose</description>
+    <pricingProfileName>Convergent Usage</pricingProfileName>
+    <priceListName>Default</priceListName>
+    <stereoType>CHARGE_RATE_PLAN_SELECTOR</stereoType>
+    <productSpecName>TelcoGsm</productSpecName>
+    <eventSpecName>EventDelayedSessionTelcoGsmRoaming</eventSpecName>
+    <customerSpecName>Account</customerSpecName>
+    <validityPeriod>
+        <validFrom>0</validFrom>
+
+	<rule>
+            <name>Zone8toDestZonetest123</name>
+            <result>
+                <resultName>chargesz8toz8</resultName>
+                <resultData>
+                    <key>RateplanIID</key>
+                    <value>bc3a6611-10e9-4767-bad8-b473f114012e</value>
+                </resultData>
+                <resultData>
+                    <key>IMPACT_CATEGORY</key>
+                    <value>Z82Z8</value>
+                </resultData>
+            </result>
+            <valueMapExpression>
+                <operation>EQUAL_TO</operation>
+                <seperator>;</seperator>
+                <valueMapName>IPT Standard Zone</valueMapName>
+                <fieldName>EventDelayedSessionTelcoGsmRoaming.TELCO_INFO.ORIGIN_NETWORK</fieldName>
+                <mappedValue>Origin Zone;Zone7</mappedValue>
+                <fieldKind>EVENT_SPEC_FIELD</fieldKind>
+            </valueMapExpression>
+            <valueMapExpression>
+                <operation>EQUAL_TO</operation>
+                <seperator>;</seperator>
+                <valueMapName>IPT Standard Zone</valueMapName>
+                <fieldName>EventDelayedSessionTelcoGsmRoaming.TELCO_INFO.DESTINATION_NETWORK</fieldName>
+                <mappedValue>Destination Zone;Zone7</mappedValue>
+                <fieldKind>EVENT_SPEC_FIELD</fieldKind>
+            </valueMapExpression>
+        </rule>
+       
+	</validityPeriod>
+
+
+
+</chargeRateplanSelector></pdc:PricingObjectsJXB>

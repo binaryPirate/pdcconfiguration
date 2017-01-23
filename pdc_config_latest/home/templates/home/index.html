@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% extends "home/base.html" %}
+{% block content %}
+For the configuration please select the option from mentioned list on left side of this page.
+{% endblock %}
+{% block desc %}
+
+{% endblock %}
+{% block href %}
+<p><a href="{% url 'pdc_configuration' %}">PDC Configuration</a></p>
+{% endblock %}
